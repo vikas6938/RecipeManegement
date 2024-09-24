@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Sidebar';  // Import Header component
+import RecipeList from './components/RecipeList';
+import RecipeDetail from './components/RecipeDetail';
+import AddRecipePage from './pages/AddRecipePage';
+import EditRecipePage from './pages/EditRecipePage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+       <Sidebar />  {/* Place Header here */}
+      <div className="container mx-auto p-4">
+        <Routes>
+          <Route path="/" element={<RecipeList />} />
+          <Route path="/recipes/:id" element={<RecipeDetail />} />
+          <Route path="/add" element={<AddRecipePage />} />
+          <Route path="/edit/:id" element={<EditRecipePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

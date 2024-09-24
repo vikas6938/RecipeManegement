@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +11,56 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* RecipeForm.css */
+
+/* Background settings */
+.recipe-bg {
+  background-image: url(../public/banner-marble-bkg.jpg); /* Add your background image URL here */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  z-index: 1;
+}
+
+.back-img{
+  background-image: url(../public/strawberry-grain.webp); 
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+  right: 30em;
+}
+
+/* Optional: Add a gradient overlay over the background image */
+.recipe-form-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url();
+  background-size: cover; /* This creates a dark overlay to make the form stand out */
+  z-index: -1;
+}
+
+/* Form container styling */
+.form-container {
+  max-width: 600px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.log-btn{
+  background-color: rgb(255,226,89);
+}
+
+.reg-btn{
+  background-color: rgb(255,224,0);
 }
